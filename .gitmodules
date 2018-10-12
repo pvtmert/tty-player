@@ -1,0 +1,6 @@
+[submodule "term.js"]
+	path = term.js
+	url = https://github.com/chris-morgan/term.js.git
+[submodule "tty-player"]
+	path = tty-player
+	url = https://github.com/chris-morgan/tty-player.git

@@ -1,0 +1,26 @@
+<tty-player controls autoplay loop ></tty-player>
+<hr />
+<input type="file" name="file" onchange="load(this, event);" />
+
+<link rel="stylesheet" type="text/css" href="./tty-player/tty-player.css" />
+<script src="./webcomponents-lite.min.js" ></script>
+<script src="./dropzone.js" ></script>
+<script src="./term.js/src/term.js" ></script>
+<script src="./tty-player/tty-player.js" ></script>
+
+<script >
+
+	function load(self, event) {
+		let reader = new FileReader()
+		let file = event.target.files[0]
+		reader.onload = function(e) {
+			let result = e.target.result.split(",")
+			result[0] = "data:application/x-ttyrec;base64"
+			document.querySelector("tty-player").src = (result.join(","))
+			return
+		}
+		reader.readAsDataURL(file)
+		return
+	}
+
+</script>
